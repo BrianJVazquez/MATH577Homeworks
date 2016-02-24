@@ -63,10 +63,12 @@ public class HomeworkTwo {
         double interval = 2*h;
         int n = 0;
         while(interval <= (b - a)){
-
-            double ode_value = -1 * valueArrays_Discrete.get(n) * Math.pow(h, 2) 
-                            - valueArrays_Discrete.get(n) + (n*Math.pow(h, 3)) 
-                            + 2 * valueArrays_Discrete.get(n + 1);
+            
+            double a = (-1*valueArrays_Discrete.get(n)*Math.pow(h, 2));
+            double b = n*Math.pow(h,3);
+            double c = valueArrays_Discrete.get(n);
+            double d = 2*valueArrays_Discrete.get(n + 1);
+            double ode_value = a+b-c+d;
 
             valueArrays_Discrete.add(ode_value);
             n++;
